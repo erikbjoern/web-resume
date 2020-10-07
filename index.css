@@ -1,0 +1,118 @@
+body {
+  background-color: white;
+  padding-bottom: 10vh;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #393939;
+  font-family: Montserrat, sans-serif;
+}
+
+h1 {
+  font-size: 250%;
+  font-weight: 100;
+  text-align: center;
+  margin: 5vh 0;
+}
+
+.heading-4 {
+  color: #777;
+  display: flex;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  justify-content: space-between;
+  margin-top: -10px;
+  text-align: left;
+}
+
+p, li {
+  color: #393939;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10pt;
+  text-align: justify;
+}
+
+header {
+  color: #999;
+  display: flex;
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+  justify-content: space-between;
+  padding: 10px 0 5px;
+}
+
+a {
+  color: #004985;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #658baa
+}
+
+.divider {
+  background-color: lightgray;
+  height: 1px;
+  width: 100%;
+
+}
+
+.container {
+  margin: 0 auto;
+  width: clamp(25ch, 90vw, 80ch);
+}
+
+.skills {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.skills h3 {
+  font-weight: 300;
+  margin: 20px 0 -10px 20px;
+}
+
+.skills > div {
+  width: 27ch;
+}
+
+.skills li {
+  color: #393939;
+  font-weight: 700;
+  text-align: left;
+}
+
+.skills ul > ul {
+  margin-left: -5ch;
+}
+
+.education > h2,
+.work-life > h2,
+.references > h2 {
+  font-weight: 300;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.references > div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.references p {
+  text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+  }
+
+  header .vertical-divider {
+    display: none;
+  }
+}
