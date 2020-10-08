@@ -33,7 +33,14 @@ p, li {
   color: #393939;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10pt;
+}
+
+p {
   text-align: justify;
+}
+
+.education li {
+  margin-bottom: 5px;
 }
 
 header {
@@ -42,7 +49,7 @@ header {
   font-family: Montserrat, sans-serif;
   font-weight: 300;
   justify-content: space-between;
-  padding: 10px 0 5px;
+  padding: clamp(10px, 10vw, 30px) 0 5px;
 }
 
 a {
@@ -63,7 +70,8 @@ a:visited {
 
 .container {
   margin: 0 auto;
-  width: clamp(25ch, 90vw, 80ch);
+  max-width: 80ch;
+  width: 80vw;
 }
 
 .skills {
@@ -77,7 +85,8 @@ a:visited {
 }
 
 .skills > div {
-  width: 27ch;
+  max-width: 27ch;
+  width: fit-content;
 }
 
 .skills li {
@@ -107,12 +116,45 @@ a:visited {
   text-align: left;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   header {
     flex-direction: column;
   }
 
   header .vertical-divider {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  p, li {
+    text-align: left;
+  }
+
+  .heading-4 {
+    max-width: 17ch;
+    justify-content: start;
+    flex-wrap: wrap;
+  }
+
+  .skills {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 20px;
+  }
+
+  .skills > div {
+    max-width: unset;
+  }
+
+  .skills ul {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .references > div {
+    flex-direction: column;
+    margin: 0 auto;
+    width: fit-content;
   }
 }
