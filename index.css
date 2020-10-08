@@ -1,6 +1,5 @@
 body {
   background-color: white;
-  padding-bottom: 10vh;
   margin: 0;
 }
 
@@ -63,15 +62,19 @@ p {
   width: inherit;
 }
 
+header,
+footer {
+  display: flex;
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+  justify-content: space-between;
+}
+
 header {
   background-color: #aab4b8;
   border-radius: 2px;
   box-shadow: 2px 2px 2px #abb7bb99;
   color: #fff;
-  display: flex;
-  font-family: Montserrat, sans-serif;
-  font-weight: 300;
-  justify-content: space-between;
   max-width: inherit;
   overflow: hidden;
   opacity: 1;
@@ -88,7 +91,8 @@ header a {
   transition: opacity .5s .1s;
 }
 
-header .contact-details {
+header .contact-details,
+footer .contact-details {
   font-size: 11pt;
   position: relative;
   top: 2px;
@@ -117,6 +121,13 @@ header .contact-details {
 
 header:hover {
   background-color: #5c6e75fa;
+}
+
+footer {
+  color: #999;
+  padding: 10vh 0 20px;
+  position: relative;
+  bottom: 0;
 }
 
 a {
