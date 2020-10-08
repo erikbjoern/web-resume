@@ -131,6 +131,15 @@ header:hover,
   transition: left .5s;
 }
 
+.cursor-blocker {
+  background-color: transparent;
+  display: block;
+  width: 31px;
+  height: 30px;
+  z-index: 10;
+  position: fixed;
+}
+
 /* LINKS */
 a {
   color: #486375;
