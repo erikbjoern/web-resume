@@ -209,6 +209,7 @@ footer {
   justify-content: space-between;
   padding: 10vh 0 20px;
   position: relative;
+  width: 100%;
 }
 
 footer .contact-details {
@@ -217,9 +218,24 @@ footer .contact-details {
   top: 2px;
 }
 
-.footer-personal,
-.footer-links {
-  display: contents;
+@supports (display: contents) {
+  .footer-personal,
+  .footer-links {
+    display: contents;
+  }
+}
+
+@supports not (display: contents) {
+  .footer-personal,
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 68%;
+  }
+
+  .footer-links {
+    width: 32%;
+  }
 }
 
 /* WHEN HORIZONTAL NAVBAR DOESN'T FIT */
