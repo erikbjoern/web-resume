@@ -152,7 +152,7 @@
         <p>
           For a period of about 18 months, I got the opportunity to work with a
           lot of different jobs, with everything from chicken production, waste
-          disposal and shoveling snow off of roofs to graphic design and
+          disposal and shoveling snow off of roof tops, to graphic design and
           woodwork. It gave me very different and valuable experiences and I
           learned that having the opportunity to keep improving and learning is
           very important to me.
@@ -184,19 +184,23 @@
         </div>
       </section>
       <footer>
-        <span>Erik Björn</span>
-        <span>|</span>
-        <span class="contact-details">0706187603</span>
-        <span>|</span>
-        <span class="contact-details">erik.g.bjoern@gmail.com</span>
-        <span>|</span>
-        <a href="https://www.linkedin.com/in/erikbjoern/" target="_blank">
-          LinkedIn
-        </a>
-        <span>|</span>
-        <a href="https://github.com/erikbjoern" target="_blank">
-          GitHub
-        </a>
+        <div class="footer-personal">
+          <span>Erik Björn</span>
+          <span class="vertical-divider">|</span>
+          <span class="contact-details">0706187603</span>
+          <span class="vertical-divider">|</span>
+          <span class="contact-details">erik.g.bjoern@gmail.com</span>
+          <span class="vertical-divider">|</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/erikbjoern/" target="_blank">
+            LinkedIn
+          </a>
+          <span class="LinkedIn/GitHub divider">|</span>
+          <a href="https://github.com/erikbjoern" target="_blank">
+            GitHub
+          </a>
+        </div>
       </footer>
     </div>
     <script>
@@ -233,6 +237,7 @@
         if (window.scrollY >= 15) {
           headerClass.remove('expanded-header')
           headerClass.add('collapsed-header')
+          bodyClass.remove('dim')
         }
         if (window.scrollY <= 1) {
           headerClass.remove('collapsed-header')
