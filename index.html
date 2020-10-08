@@ -6,15 +6,25 @@
     <title>Erik Björn Web Résumé</title>
     <link href="index.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      document.addEventListener("scroll", () => {
+        if (window.scrollY >= 15) {
+          document.getElementsByTagName('header')[0].classList.add('sticky-header')
+        }
+        if (window.scrollY <= 1) {
+          document.getElementsByTagName('header')[0].classList.remove('sticky-header')
+        } 
+      })
+    </script>
   </head>
   <body>
     <div class="container">
       <header>
         <span>Erik Björn</span>
         <span class="vertical-divider">|</span>
-        <span>0706187603</span>
+        <span class="contact-details">0706187603</span>
         <span class="vertical-divider">|</span>
-        <span>erik.g.bjoern@gmail.com</span>
+        <span class="contact-details">erik.g.bjoern@gmail.com</span>
         <span class="vertical-divider">|</span>
         <a href="https://www.linkedin.com/in/erikbjoern/" target="_blank">
           LinkedIn
@@ -24,7 +34,6 @@
           GitHub
         </a>
       </header>
-      <!-- <div class="divider"></div> -->
       <h1>CV</h1>
       <section>
         <h2>My skills as a developer</h2>

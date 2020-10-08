@@ -12,10 +12,19 @@ h4 {
   font-family: Montserrat, sans-serif;
 }
 
+h1,
+.education > h2,
+.work-life > h2,
+.references > h2 {
+  color: #5c6e75;
+  font-weight: 300;
+  margin-top: 50px;
+  text-align: center;
+}
+
 h1 {
   font-size: 250%;
   font-weight: 100;
-  text-align: center;
   margin: 5vh 0;
 }
 
@@ -44,21 +53,56 @@ p {
 }
 
 header {
-  color: #999;
+  background-color: #aab4b8;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0px 2px 1px #5c6e7566;
+  color: #fff;
   display: flex;
   font-family: Montserrat, sans-serif;
   font-weight: 300;
   justify-content: space-between;
-  padding: clamp(10px, 10vw, 30px) 0 5px;
+  padding: 5px 80px;
+  position: fixed;
+  margin: clamp(10px, 5vw, 30px) 0 0 -80px;
+  max-width: inherit;
+  top: 0;
+  transition: margin .3s ease-out, background-color .3s;
+  width: inherit;
+}
+
+header .contact-details {
+  font-size: 11pt;
+  position: relative;
+  top: 2px;
+}
+
+.sticky-header {
+  margin-top: 0;
+}
+
+header:hover {
+  background-color: #5c6e75fa;
 }
 
 a {
-  color: #004985;
+  color: #d7f0fb;
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 a:visited {
-  color: #658baa
+  color: #1a2125
+}
+
+p a {
+  color: #13678b;
+}
+
+p a:visited {
+  color: #186786;
 }
 
 .divider {
@@ -69,19 +113,18 @@ a:visited {
 }
 
 .container {
-  margin: 0 auto;
+  margin: clamp(50px, 15vw, 100px) auto 0;
   max-width: 80ch;
   width: 80vw;
 }
 
 .skills {
   display: flex;
-  justify-content: space-evenly;
 }
 
 .skills h3 {
   font-weight: 300;
-  margin: 20px 0 -10px 20px;
+  margin: 0 0 -10px 20px;
 }
 
 .skills > div {
@@ -97,14 +140,6 @@ a:visited {
 
 .skills ul > ul {
   margin-left: -5ch;
-}
-
-.education > h2,
-.work-life > h2,
-.references > h2 {
-  font-weight: 300;
-  margin-top: 50px;
-  text-align: center;
 }
 
 .references > div {
