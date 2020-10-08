@@ -218,6 +218,10 @@ footer .contact-details {
   top: 2px;
 }
 
+footer a {
+  color: #13678b;
+}
+
 @supports (display: contents) {
   .footer-personal,
   .footer-links {
@@ -287,10 +291,13 @@ footer .contact-details {
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin-right: 10px;
   }
 
   .footer-links {
-    display: inline;
+    display: flex;
+    position: relative;
+    top: 2px;
   }
 }
 
