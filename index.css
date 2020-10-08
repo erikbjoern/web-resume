@@ -244,11 +244,16 @@ footer a {
   .footer-links {
     display: flex;
     justify-content: space-between;
-    width: 68%;
   }
 
-  .footer-links {
-    width: 32%;
+  .footer-personal,
+  .footer-links,
+  footer > .vertical-divider {
+    flex: 1 1 auto
+  }
+
+  footer > .vertical-divider {
+    text-align: center;
   }
 }
 
@@ -341,6 +346,7 @@ footer a {
   }
 
   footer {
+    width: 100%;
     justify-content: space-between;
     align-items: flex-end;
   }
@@ -354,6 +360,7 @@ footer a {
 
   .footer-links {
     display: inline;
+    flex: none;
   }
 
   footer .linkedin {
