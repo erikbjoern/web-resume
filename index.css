@@ -78,6 +78,7 @@ p {
 }
 
 header {
+  align-items: baseline;
   background-color: #99afbd;
   border-radius: 2px;
   box-shadow: 2px 2px 2px #abb7bb99;
@@ -104,8 +105,6 @@ header a {
 
 header .contact-details {
   font-size: 11pt;
-  position: relative;
-  top: 2px;
 }
 
 header:hover,
@@ -143,24 +142,44 @@ header:hover,
 
 /* LINKS */
 a {
-  color: #d7f0fb;
+  color: #13678b;
   text-decoration: none;
 }
 
-a:hover {
+p a:hover {
   text-decoration: underline;
-}
-
-a:visited {
-  color: #1a2125
-}
-
-p a {
-  color: #13678b;
 }
 
 p a:visited {
   color: #186786;
+}
+
+.linkedin {
+  height: 18px;
+}
+
+.linkedin.white {
+  filter: sepia(200%) saturate(0%) brightness(250%);
+}
+
+.github.large-icon { 
+  height: 25px;
+  margin: -4px 0;
+}
+
+.github.small-icon {
+  height: 18px;
+  margin: -2px 0 1px 0;
+}
+
+.large-icon,
+.small-icon {
+position: relative;
+bottom: -3px;
+}
+
+.small-icon {
+  display: none;
 }
 
 /* SKILLS SECTION */
@@ -280,6 +299,10 @@ footer a {
   header .vertical-divider,
   footer .vertical-divider {
     display: none;
+  }
+
+  .github.large-icon {
+    margin-left: -4px;
   }
 
   footer {
