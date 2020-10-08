@@ -10,6 +10,7 @@
       document.addEventListener("scroll", () => {
         if (window.scrollY >= 15) {
           document.getElementsByTagName('header')[0].classList.add('sticky-header')
+          document.getElementsByClassName('sticky-header')
         }
         if (window.scrollY <= 1) {
           document.getElementsByTagName('header')[0].classList.remove('sticky-header')
@@ -18,22 +19,24 @@
     </script>
   </head>
   <body>
-    <div class="container">
-      <header>
-        <span>Erik Björn</span>
-        <span class="vertical-divider">|</span>
-        <span class="contact-details">0706187603</span>
-        <span class="vertical-divider">|</span>
-        <span class="contact-details">erik.g.bjoern@gmail.com</span>
-        <span class="vertical-divider">|</span>
-        <a href="https://www.linkedin.com/in/erikbjoern/" target="_blank">
-          LinkedIn
-        </a>
-        <span class="vertical-divider">|</span>
-        <a href="https://github.com/erikbjoern" target="_blank">
-          GitHub
-        </a>
-      </header>
+    <div class="main-container">
+      <div class="header-placement">
+        <header>
+          <span class="E">E<span>rik Björn</span></span>
+          <span class="vertical-divider">|</span>
+          <span class="contact-details">0706187603</span>
+          <span class="vertical-divider">|</span>
+          <span class="contact-details">erik.g.bjoern@gmail.com</span>
+          <span class="vertical-divider">|</span>
+          <a href="https://www.linkedin.com/in/erikbjoern/" target="_blank">
+            LinkedIn
+          </a>
+          <span class="vertical-divider">|</span>
+          <a href="https://github.com/erikbjoern" target="_blank">
+            GitHub
+          </a>
+        </header>
+      </div>
       <h1>CV</h1>
       <section>
         <h2>My skills as a developer</h2>
