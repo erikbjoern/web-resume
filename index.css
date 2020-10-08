@@ -21,7 +21,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: #393939;
+  color: #141f25;
   font-family: Montserrat, sans-serif;
 }
 
@@ -29,7 +29,7 @@ h1,
 .education > h2,
 .work-life > h2,
 .references > h2 {
-  color: #557385;
+  color: #486375;
   font-weight: 300;
   margin-top: 50px;
   text-align: center;
@@ -42,7 +42,7 @@ h1 {
 }
 
 .heading-4 {
-  color: #777;
+  color: #486375;
   display: flex;
   font-family: Montserrat, sans-serif;
   font-weight: 500;
@@ -92,7 +92,7 @@ header {
   overflow: hidden;
   padding: 5px clamp(40px, 8.5vw, 80px);
   position: fixed;
-  transition: max-width .3s ease-out;
+  transition: max-width .3s ease-out, background-color .3s;
   white-space: nowrap;
   width: inherit;
 }
@@ -109,7 +109,7 @@ header .contact-details {
 
 header:hover,
 .expanded-header {
-  background-color: #8aa2b1;
+  background-color: #7a9aaf;
 }
 
 .collapsed-header {
@@ -133,7 +133,7 @@ header:hover,
 
 /* LINKS */
 a {
-  color: #13678b;
+  color: #486375;
   text-decoration: none;
 }
 
@@ -179,6 +179,7 @@ bottom: -3px;
 }
 
 .skills h3 {
+  color: #486375;
   font-weight: 300;
   margin: 0 0 -10px 20px;
 }
@@ -188,14 +189,14 @@ bottom: -3px;
   width: fit-content;
 }
 
-.skills li {
-  color: #393939;
-  font-weight: 700;
-  text-align: left;
-}
-
 .skills ul > ul {
   margin-left: -5ch;
+}
+
+.skills li {
+  color: #141f25;
+  font: 10pt Montserrat, sans-serif;
+  font-weight: 700;
 }
 
 /* REFERENCES SECTION */
