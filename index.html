@@ -6,22 +6,12 @@
     <title>Erik Björn Web Résumé</title>
     <link href="index.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-      document.addEventListener("scroll", () => {
-        if (window.scrollY >= 15) {
-          document.getElementsByTagName('header')[0].classList.add('sticky-header')
-          document.getElementsByClassName('sticky-header')
-        }
-        if (window.scrollY <= 1) {
-          document.getElementsByTagName('header')[0].classList.remove('sticky-header')
-        } 
-      })
-    </script>
   </head>
   <body>
     <div class="main-container">
       <div class="header-placement">
-        <header>
+        <div class="cursor-blocker" onmouseover="expandHeader()" onmouseout="collapseHeader()"></div>
+        <header onmouseover="expandHeader()" onmouseout="collapseHeader()">
           <span class="E">E<span>rik Björn</span></span>
           <span class="vertical-divider">|</span>
           <span class="contact-details">0706187603</span>
@@ -209,5 +199,46 @@
         </a>
       </footer>
     </div>
+    <script>
+      const headerClass = document.getElementsByTagName('header')[0].classList
+      const bodyClass = document.getElementsByTagName('body')[0].classList
+      let mouseOver = false
+      let mouseOut = false
+
+      const collapseHeader = () => {
+        if (!mouseOut && headerClass.contains('expanded-header')) {
+          mouseOver = false
+          mouseOut = true
+          headerClass.add('collapsed-header')
+          headerClass.remove('expanded-header')
+          bodyClass.remove('dim')
+        }
+      }
+
+      const expandHeader = () => {
+        if (!mouseOver && headerClass.contains('collapsed-header')) {
+          mouseOver = true
+          mouseOut = false
+          headerClass.add('expanded-header')
+          headerClass.remove('collapsed-header')
+          bodyClass.add('dim')
+
+          setTimeout(() => {
+            mouseOver = false
+          }, 1000)
+        }
+      }
+
+      document.addEventListener("scroll", () => {
+        if (window.scrollY >= 15) {
+          headerClass.remove('expanded-header')
+          headerClass.add('collapsed-header')
+        }
+        if (window.scrollY <= 1) {
+          headerClass.remove('collapsed-header')
+          headerClass.remove('expanded-header')
+        } 
+      })
+    </script>
   </body>
 </html>

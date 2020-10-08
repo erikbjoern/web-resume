@@ -1,8 +1,22 @@
+/* BODY */
 body {
-  background-color: white;
+  background-color: #f5f3ef;
   margin: 0;
+  transition: background-color .3s;
 }
 
+.dim {
+  background-color: #e4e0da;
+}
+
+.main-container {
+  margin: 15vh auto 0;
+  max-width: 80ch;
+  position: relative;
+  width: 80vw;
+}
+
+/* HEADINGS */
 h1,
 h2,
 h3,
@@ -15,7 +29,7 @@ h1,
 .education > h2,
 .work-life > h2,
 .references > h2 {
-  color: #5c6e75;
+  color: #557385;
   font-weight: 300;
   margin-top: 50px;
   text-align: center;
@@ -37,6 +51,7 @@ h1 {
   text-align: left;
 }
 
+/* PARAGRAPHS and LIST ITEMS */
 p, li {
   color: #393939;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -51,8 +66,8 @@ p {
   margin-bottom: 5px;
 }
 
+/* HEADER */
 .header-placement {
-  background-color: tomato;
   display: flex;
   justify-content: flex-end;
   max-width: inherit;
@@ -62,22 +77,18 @@ p {
   width: inherit;
 }
 
-header,
-footer {
+header {
+  background-color: #99afbd;
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px #abb7bb99;
+  color: #fff;
   display: flex;
   font-family: Montserrat, sans-serif;
   font-weight: 300;
   justify-content: space-between;
-}
-
-header {
-  background-color: #aab4b8;
-  border-radius: 2px;
-  box-shadow: 2px 2px 2px #abb7bb99;
-  color: #fff;
   max-width: inherit;
-  overflow: hidden;
   opacity: 1;
+  overflow: hidden;
   padding: 5px 80px;
   position: fixed;
   transition: max-width .3s ease-out;
@@ -91,45 +102,44 @@ header a {
   transition: opacity .5s .1s;
 }
 
-header .contact-details,
-footer .contact-details {
+header .contact-details {
   font-size: 11pt;
   position: relative;
   top: 2px;
 }
 
-.sticky-header {
+header:hover,
+.expanded-header {
+  background-color: #8aa2b1;
+}
+
+.collapsed-header {
   max-width: 20px;
   padding: 5px 6px;
 }
 
-.sticky-header span,
-.sticky-header a {
+.collapsed-header span,
+.collapsed-header a {
   opacity: 0;
   transition: opacity .1s;
 }
 
-.sticky-header .E {
+.collapsed-header .E {
   opacity: 1;
   left: 4px;
   position: relative;
 }
 
-.sticky-header:hover {
-  
+.cursor-blocker {
+  background-color: transparent;
+  display: block;
+  width: 31px;
+  height: 30px;
+  z-index: 10;
+  position: fixed;
 }
 
-header:hover {
-  background-color: #5c6e75fa;
-}
-
-footer {
-  color: #999;
-  padding: 10vh 0 20px;
-  position: relative;
-  bottom: 0;
-}
-
+/* LINKS */
 a {
   color: #d7f0fb;
   text-decoration: none;
@@ -151,20 +161,7 @@ p a:visited {
   color: #186786;
 }
 
-.divider {
-  background-color: lightgray;
-  height: 1px;
-  width: 100%;
-
-}
-
-.main-container {
-  margin: 15vh auto 0;
-  max-width: 80ch;
-  position: relative;
-  width: 80vw;
-}
-
+/* SKILLS SECTION */
 .skills {
   display: flex;
 }
@@ -189,6 +186,7 @@ p a:visited {
   margin-left: -5ch;
 }
 
+/* REFERENCES SECTION */
 .references > div {
   display: flex;
   justify-content: space-evenly;
@@ -198,6 +196,26 @@ p a:visited {
   text-align: left;
 }
 
+
+/* FOOTER */
+footer {
+  bottom: 0;
+  color: #557385;
+  display: flex;
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+  justify-content: space-between;
+  padding: 10vh 0 20px;
+  position: relative;
+}
+
+footer .contact-details {
+  font-size: 11pt;
+  position: relative;
+  top: 2px;
+}
+
+/* WHEN HORIZONTAL NAVBAR DOESN'T FIT */
 @media only screen and (max-width: 700px) {
   header {
     flex-direction: column;
@@ -208,17 +226,21 @@ p a:visited {
   }
 }
 
+/* SMALL SCREENS */
 @media only screen and (max-width: 520px) {
-  p, li {
-    text-align: left;
-  }
-
+  /* HEADINGS */
   .heading-4 {
     max-width: 17ch;
     justify-content: start;
     flex-wrap: wrap;
   }
 
+  /* PARAGRAPHS and LIST ITEMS */
+  p, li {
+    text-align: left;
+  }
+
+  /* SKILLS SECTION */
   .skills {
     flex-wrap: wrap;
     justify-content: space-between;
@@ -234,6 +256,7 @@ p a:visited {
     grid-template-columns: auto;
   }
 
+  /* REFERENCES SECTION */
   .references > div {
     flex-direction: column;
     margin: 0 auto;
