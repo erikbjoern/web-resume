@@ -36,12 +36,51 @@ const keepHeaderOpenOnSmallScreens = () => {
   }
 }
 
+const currentPositionIsCloseTo = (position) => {
+  return Math.abs(window.pageYOffset - position) <= 30
+}
+
+const getScrollPosition = (element) => {
+  let currentElement = element
+  let scrollPosition = element.offsetTop
+  
+  if (window.pageYOffset <= 1) {
+    return scrollPosition = 0
+  }
+
+  while (!currentElement.classList.contains('main-container')) {
+    currentElement = currentElement.offsetParent
+    scrollPosition += currentElement.offsetTop
+  }
+  
+  return scrollPosition
+}
+
+
+/* This function will along with matchPosition() match the scroll position when changing
+   language. matchPosition is called before document is fully loaded, in bottom of this file. */
 const storeScrollPosition = () => {
-  window.sessionStorage.setItem("scrollPosition", window.pageYOffset)
+  const previousPosition = window.sessionStorage.getItem("scrollPosition")
+
+  if (currentPositionIsCloseTo(previousPosition)) {
+    return
+  }
+
+  const htmlElements = document.getElementsByClassName('main-container')[0].querySelectorAll('h1, h2, h3, p, ul')
+  const topMostElement = Object.values(htmlElements).find(elem => elem.getBoundingClientRect().bottom >= 0)
+  const scrollPosition = getScrollPosition(topMostElement)
+
+  window.sessionStorage.setItem("scrollPosition", scrollPosition)
 }
 
 const matchPosition = () => {
   const scrollPosition = parseInt(window.sessionStorage.getItem("scrollPosition"))
+  
+  if (scrollPosition >= 1) {
+    headerClass.add('collapsed-header')
+    languageSwitchClass.remove('top-position')
+  }
+  
   window.scrollTo({left: 0, top: scrollPosition, behavior: "auto" })
 }
 
@@ -60,3 +99,5 @@ document.addEventListener("scroll", () => {
     languageSwitchClass.add('top-position')
   } 
 })
+
+matchPosition()

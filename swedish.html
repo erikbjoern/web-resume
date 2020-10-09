@@ -8,19 +8,19 @@
     <link href="index.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
-  <body onload="matchPosition()">
+  <body>
     <div class="main-container">
       <div class="header-placement">
         <div 
-          class="language-switch" 
+          class="language-switch top-position" 
           onmouseover="keepHeaderOpenOnSmallScreens()" 
           onmouseout="collapseHeader()" 
           onclick="storeScrollPosition()"
         >
           <a href="index.html">EN</a><span>|</span><a href="swedish.html">SE</a>
         </div>
-        <div class="cursor-blocker" onmouseover="expandHeader()" onmouseout="collapseHeader()"></div>
-        <header class="collapsed-header" onmouseover="expandHeader()" onmouseout="collapseHeader()">
+        <div onmouseover="expandHeader()" onmouseout="collapseHeader()"></div>
+        <header onmouseover="expandHeader()" onmouseout="collapseHeader()">
           <span class="E">E<span>rik Björn</span></span>
           <span class="vertical-divider">|</span>
           <span class="contact-details">0706187603</span>
