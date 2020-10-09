@@ -36,6 +36,15 @@ const keepHeaderOpenOnSmallScreens = () => {
   }
 }
 
+const storeScrollPosition = () => {
+  window.sessionStorage.setItem("scrollPosition", window.pageYOffset)
+}
+
+const matchPosition = () => {
+  const scrollPosition = parseInt(window.sessionStorage.getItem("scrollPosition"))
+  window.scrollTo({left: 0, top: scrollPosition, behavior: "auto" })
+}
+
 document.addEventListener("scroll", () => {
   if (window.scrollY >= 15) {
     headerClass.remove('expanded-header')
