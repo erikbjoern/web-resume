@@ -89,7 +89,7 @@ p {
   position: fixed;
   margin-top: 50px;
   margin-right: -8px;
-  transition: margin .3s ease-out;
+  transition: all .3s ease-out;
   z-index: 20;
 }
 
@@ -304,15 +304,22 @@ footer a {
 
 /* WHEN LAUNGUAGE SWITCH TOUCHES WINDOW BORDER */
 @media only screen and (max-width: 810px) and (min-width: 520px) {
+  .language-switch.top-position {
+    display: unset;
+    margin-right: 12px;
+  }
+
   .language-switch {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     margin-right: 8px;
   }
 
-  .language-switch span {
-    transform: translate(5px, 5px) rotate(55deg);
+  .collapsed.language-switch span {
+    transform: translate(2px, 8px) rotate(90deg);
+    font-size: 18pt;
+    font-weight: 100;
+    margin: -10px 0;
   }
 }
 
@@ -342,11 +349,13 @@ footer a {
     right: 5px;
   }
 
+  /* LANGUAGE SWITCH */
   .language-switch {
     opacity: 1;
-    top: calc(5vh - 45px);
-    margin-right: -30px;
-    transition: opacity .3s, margin .3s ease-out;
+    top: calc(5vh + 15px);
+    margin-right: 10px !important;
+    right: 0;
+    transition: opacity .3s .2s, margin .3s ease-out;
   }
 
   .language-switch * {
@@ -357,6 +366,7 @@ footer a {
     pointer-events: none;
     display: inline;
     opacity: 0;
+    transition: none;
   }
 
   /* HEADINGS */
@@ -385,7 +395,7 @@ footer a {
   }
 
   header {
-    max-height: 5rem;
+    max-height: 8ch;
     padding-left: 90px;
     transition: max-width .2s ease-out, max-height .2s .2s ease-out;
   }
@@ -393,12 +403,6 @@ footer a {
   .collapsed-header {
     max-height: 20px;
     transition: padding .2s .2s, max-width .2s .2s ease-out, max-height .2s ease-out;
-  }
-
-  header > *,
-  .collapsed-header > * {
-    position: relative;
-    left: 5vw;
   }
 
   header .vertical-divider,
@@ -423,7 +427,7 @@ footer a {
 
   header .linkedin-github-divider {
     bottom: 18px;
-    left: 50px;
+    left: 26px;
   }
 
   footer {
