@@ -469,21 +469,25 @@ footer a {
     bottom: 77px;
     left: 71px;
   }
-
-  .tooltip .long-version {
-    display: initial;
-  }
-
-  .tooltip .long-version br {
-    display: none;
-  }
-
+  
   .tooltip {
     height: 10px;
     width: 10px;
     left: 92px;
     bottom: 92px;
     position: relative;
+  }
+
+  .tooltip .long-version {
+    display: initial;
+  }
+  
+  .tooltip .long-version br {
+    display: none;
+  }
+  
+  .tooltip::selection {
+    background: transparent;
   }
 
   footer {
