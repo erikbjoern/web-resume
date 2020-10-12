@@ -11,7 +11,10 @@ const collapseHeader = () => {
     headerClass.add('collapsed-header')
     headerClass.remove('expanded-header')
     bodyClass.remove('dim')
-    languageSwitchClass.add('collapsed')
+
+    if (window.innerWidth <= 550) {
+      languageSwitchClass.add('collapsed')
+    }
   }
 }
 
@@ -22,7 +25,9 @@ const expandHeader = () => {
     headerClass.add('expanded-header')
     headerClass.remove('collapsed-header')
     bodyClass.add('dim')
-    languageSwitchClass.remove('collapsed')
+    if (window.innerWidth <= 550) {
+      languageSwitchClass.remove('collapsed')
+    }
 
     setTimeout(() => {
       mouseOver = false
@@ -31,9 +36,14 @@ const expandHeader = () => {
 }
 
 const keepHeaderOpenOnSmallScreens = () => {
-  if (window.innerWidth <= 520) {
+  if (window.innerWidth <= 550) {
     expandHeader()
   }
+}
+
+const toggleTooltip = () => {
+  const tooltipClass = document.getElementsByClassName('tooltip')[0].classList
+  tooltipClass.contains('open') ? tooltipClass.remove('open') : tooltipClass.add('open')
 }
 
 const currentPositionIsCloseTo = (position) => {
