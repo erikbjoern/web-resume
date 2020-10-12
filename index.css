@@ -69,6 +69,10 @@ p {
   text-align: justify;
 }
 
+li {
+  text-align: left;
+}
+
 .education li {
   margin-bottom: 5px;
 }
@@ -112,8 +116,14 @@ p {
   transform: none !important;
 }
 
-.language-switch a:hover {
-  color: initial;
+.language-switch a.inactive:hover {
+  color: #486375;
+  font-weight: 600;
+}
+
+.language-switch a.active {
+  cursor: default;
+  font-weight: 600;
 }
 
 header {
@@ -215,8 +225,8 @@ bottom: -3px;
   display: none;
 }
 
-i:hover,
-a:hover {
+header i:hover,
+header a:hover {
   opacity: .75;
 }
 
@@ -337,7 +347,7 @@ footer a {
   .language-switch {
     display: flex;
     flex-direction: column;
-    margin-right: 8px;
+    margin-right: 6px;
   }
 
   .language-switch span {
@@ -405,11 +415,6 @@ footer a {
     max-width: 17ch;
     justify-content: start;
     flex-wrap: wrap;
-  }
-
-  /* PARAGRAPHS and LIST ITEMS */
-  p, li {
-    text-align: left;
   }
 
   /* HEADER and FOOTER */
